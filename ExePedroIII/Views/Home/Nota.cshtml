@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Nota";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Calculando minha nota</h1>
+<h3 style="color: white; background:red;">@TempData["erro"]</h3>
+<form action="CalculaNota" method="get">
+    <div>
+        <label for="NotaLb"><h3>Digite a quantidade de erros:</h3></label>
+        <input type="number" name="Nota" required/>
+    </div>
+    <button type="submit">Calcular</button>
+</form>
+

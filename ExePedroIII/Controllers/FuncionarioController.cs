@@ -24,6 +24,27 @@ namespace ExePedroIII.Controllers
             ViewBag.id = funcionario.Id;
             ViewBag.nome = funcionario.Nome;
             ViewBag.funcao = funcionario.Funcao;
+
+            if (ViewBag.id <= 0 && ViewBag.nome == null && ViewBag.funcao == null)
+            {
+                TempData["erro"] = "";
+                return RedirectToAction("CadastrarFunc");
+            }
+            if (ViewBag.id <= 0)
+            {
+                TempData["erro"] = "O campo codigo deve ser preenchido!";
+                return RedirectToAction("CadastrarFunc");
+            }
+            if (ViewBag.nome == null)
+            {
+                TempData["erro"] = "O campo nome deve ser preenchido!";
+                return RedirectToAction("CadastrarFunc");
+            }
+            if (ViewBag.funcao == null)
+            {
+                TempData["erro"] = "O campo funcao deve ser preenchido!";
+                return RedirectToAction("CadastrarFunc");
+            }
             return View();
         }
     }

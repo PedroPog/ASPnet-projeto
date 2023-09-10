@@ -12,7 +12,23 @@ namespace ExePedroIII.Controllers
         {
             return View();
         }
-
+        public ActionResult Nota()
+        {
+            return View();
+        }
+        public ActionResult CalculaNota(int Nota)
+        {
+            if(Nota < 0 || Nota > 10)
+            {
+                TempData["erro"] = "Digite um valor valido!";
+                return RedirectToAction("Nota");
+            }
+            else
+            {
+                ViewBag.NotaFinal = 10 - Nota;
+                return View();
+            }
+        }
 
     }
 }

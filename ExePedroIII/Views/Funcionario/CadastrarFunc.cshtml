@@ -5,10 +5,11 @@
 }
 
 <h2>Cadastre um Funcionário</h2>
+<h3 style="color: white; background:red;" >@TempData["erro"]</h3>
 <form action="SelectFunc" method="get">
     <div>
         <label for="FuncionarioId">Código </label>
-        <input type="number" value="@Model.Id" name="Id"/>
+        <input type="number" value="@Model.Id" name="Id" />
     </div>
     <div>
         <label for="FuncionarioNome">Nome </label>
